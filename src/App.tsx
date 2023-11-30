@@ -12,13 +12,10 @@ export default function App(){
     const $header = document.getElementById('landingHeader') as HTMLElement;
     const oberser = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        console.log(entry);
         const {isIntersecting} = entry;
         if(isIntersecting){
           const color = entry.target.getAttribute('data-header-section');
-          console.log(color)
-          $header.style.backgroundColor = String(color);
-          console.log($header)
+          $header.style.color = String(color);
         }
       })
     }, observerOptions);
