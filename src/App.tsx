@@ -6,7 +6,7 @@ import { funcionesMain } from "./services/functions";
 export default function App(){
   // archivo con las funciones del hover y las interacciones de los estilos en el header con los componentes 
   funcionesMain();
-  const imagesTitle = ['Model3', 'ModelS', 'ModelXej', 'SolarPanel', 'SolarRoof'];
+  const imagesTitle = ['Modelo3', 'ModelS', 'ModelXej', 'SolarPanel', 'SolarRoof'];
   // probando intereception observer 
 return (<>
     <Header />
