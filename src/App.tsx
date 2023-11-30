@@ -1,44 +1,33 @@
 import HeroSection from "./HeroSection/HeroSection";
 import Header from "./components/header/header";
 import VideoLayout from "./components/sections/videoLayout";
+import { dataCars } from "./services/data";
+import { funcionesMain } from "./services/functions";
 export default function App(){
+  // archivo con las funciones del hover y las interacciones de los estilos en el header con los componentes 
+  funcionesMain();
+  const imagesTitle = ['Model3', 'ModelS', 'ModelXej', 'SolarPanel', 'SolarRoof'];
   // probando intereception observer 
-  window.addEventListener('load', ()=> {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: [0.8],
-    }
-    const $header = document.getElementById('landingHeader') as HTMLElement;
-    const oberser = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const {isIntersecting} = entry;
-        if(isIntersecting){
-          const color = entry.target.getAttribute('data-header-section');
-          $header.style.color = String(color);
-        }
-      })
-    }, observerOptions);
-    const $sections = document.querySelectorAll('.landingSection');
-    $sections.forEach($section => oberser.observe($section));
-  })
 return (<>
     <Header />
 
     <main className="relative w-screen h-screen overflow-x-hidden  snap-y snap-mandatory">
-      <div className="snap-center">
       <VideoLayout />
-      </div>
-      <div className="snap-center">
-        <HeroSection />
-      </div>
-      <div className="snap-center">
-        <HeroSection />
-      </div>
-      <div className="snap-center">
-        <HeroSection />
-      </div>
-
+        {imagesTitle.map((element, index) => {
+          return (
+          <HeroSection content={dataCars[index]} dataHeader="black" >
+            <img src={`../../../public/${element}.avif`} alt="" />
+          </HeroSection>)
+        })}
+        <HeroSection content={dataCars[0]} dataHeader="white" >
+        <img className="object-center object-cover " src="../../../public/Model3.avif"></img>
+        </HeroSection>
+        <HeroSection content={dataCars[1]} dataHeader="black" >
+          <img src="../../../public/ModelXej.avif" alt="" />
+        </HeroSection>
+        <HeroSection dataHeader="black" >
+          <img src="../../../public/ModelS.avif" alt="" />
+        </HeroSection>
     </main>
   </>)
 }

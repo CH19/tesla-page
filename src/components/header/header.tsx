@@ -1,22 +1,6 @@
 import ElementesComplete from './elmentsComplete';
 export default function Header() {
-    window.addEventListener('load', ()=> {
-        const listItems = document.querySelectorAll('#landingHeader li');
-        const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement;
-        listItems.forEach(item => {
-            item.addEventListener('mouseenter', (event)=>{
-                const target = event.target as HTMLElement
-                const {left, top, width, height} = target.getBoundingClientRect();
-                menuBackDrop.style.setProperty('--left', String(`${left}px`));
-                menuBackDrop.style.setProperty('--top', String(`${top}px`));
-                menuBackDrop.style.setProperty('--width', String(`${width}px`));
-                menuBackDrop.style.setProperty('--height', String(`${height}px`));
-            })
-            item.addEventListener('mouseleave', ()=> {
-                alert('hola')
-            })
-        })
-    })
+
     const opcciones2 = [
         'Soporte', 'Tienda', 'Cuenta', 'Menú'
     ];
