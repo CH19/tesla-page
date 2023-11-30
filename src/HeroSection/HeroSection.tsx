@@ -7,7 +7,7 @@ export default function HeroSection() {
         footer: 'Prueba de conducción'
     }
 return (<>
-    <section className=" bg-dark text-white w-screen h-screen text-center overflow-hidden relative ">
+    <section className="landingSection bg-dark text-dark w-screen h-screen text-center overflow-hidden relative " data-header-section="purple">
         <div className="flex flex-col h-screen justify-center">
         <header className="relative z-20 flex flex-grow justify-center items-center flex-nowrap flex-col">
         <h2 className="text-2xl font-bold">{content.title}</h2>
@@ -26,7 +26,7 @@ return (<>
 
         </div>
         <div className="absolute top-0 w-screen h-screen z-10">
-        <video className="object-center " src="../../../public/Homepage-Model-Y-Desktop-NA.mp4"></video>
+        <img className="object-center object-cover " src="../../../public/Model3.avif"></img>
         </div>
     </section>
 

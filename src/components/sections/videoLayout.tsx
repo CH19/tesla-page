@@ -6,7 +6,7 @@ export default function VideoLayout() {
         footer: 'Prueba de conducción'
     }
 return (<>
-    <section className=" bg-dark text-white w-screen h-screen text-center overflow-hidden relative ">
+    <section className="landingSection bg-dark text-white w-screen h-screen text-center overflow-hidden relative " data-header-section="blue"    >
         <div className="flex flex-col h-screen justify-center">
         <header className="relative z-20 flex flex-grow justify-center items-center flex-nowrap flex-col">
         <h2 className="text-2xl font-bold">{content.title}</h2>
